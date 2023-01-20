@@ -1,0 +1,6 @@
+	lambda	gamma	score	time	dataset
+77	0.1		0.5		80.95	0.001	sonar
+58	0.2		0.7		70.37	0.001	heart
+116	0.7		0.2		64.93	0.007	spambase
+36	0.5		0.2		64.5	0.002	diabete
+9	0.2		1.0		63.74	0.001	cancer
