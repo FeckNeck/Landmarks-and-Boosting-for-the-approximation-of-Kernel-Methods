@@ -18,7 +18,7 @@ for i in (1000,5000,10000,50000,80000,100000):
     X,Y = datasets.make_moons(n_samples=i)
     Xtrain, Xtest, ytrain, ytest = train_test_split(X, Y, train_size=0.7, random_state=3)
     
-    svc = svm.SVC(kernel ='linear', C = 1).fit(Xtrain, ytrain)
+    svc = svm.SVC(kernel ='rbf', C = 1).fit(Xtrain, ytrain)
     ypred = svc.predict(Xtest)
     
     acc_adl.append(accuracy_score(ytest,ypred))
