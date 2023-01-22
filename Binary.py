@@ -55,7 +55,7 @@ for i in (3,5,6,10,15,20):
     kmeans = cluster.KMeans(n_clusters=i)
     X = kmeans.fit_transform(X)
     Xtrain, Xtest, ytrain, ytest = train_test_split(X, Y, train_size=0.7, random_state=123)
-    svc = SVC(kernel ='linear', C = 1).fit(Xtrain, ytrain)
+    svc = SVC(kernel ='rbf', C = 1).fit(Xtrain, ytrain)
     ypred = svc.predict(Xtest)
     acc_adl.append(accuracy_score(ytest,ypred))
     end = time.time()
@@ -73,7 +73,7 @@ for i in (100,500,1000,5000,10000,50000):
     y_class = np.where(Y<9.5, 0, 1) #création de la variable y car non binaire à la base
     Xtrain, Xtest, ytrain, ytest = train_test_split(X, y_class, train_size=0.7, random_state=123)
     
-    svc = svm.SVC(kernel ='linear', C = 1).fit(Xtrain, ytrain)
+    svc = svm.SVC(kernel ='rbf', C = 1).fit(Xtrain, ytrain)
     ypred = svc.predict(Xtest)
     
     acc_adl.append(accuracy_score(ytest,ypred))
